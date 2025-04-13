@@ -1,3 +1,5 @@
+// This Code is not written my me but from https://github.com/5m1Ly/cfx-htmx
+
 // UMD insanity
 // This code sets up support for (in order) AMD, ES6 modules, and globals.
 (function (root, factory) {
