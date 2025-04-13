@@ -6,7 +6,7 @@ Config.ImgWebhook = "" -- discord Webhook
 Config.ShowVehicleRegististration = true
 
 Config.Dispatches = {
-    type = "roadphone", -- roadphone / lbphone
+    type = "roadphone", -- roadphone / lbphone (lbphone support will come soon)
     number = 911, -- disable this number as a job number // if you use roadphone enable the number as an eventnumber
     maxTimeToAnswer = 20, -- how long the dispatcher has time to answer the call
 }
