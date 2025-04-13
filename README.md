@@ -3,7 +3,7 @@ FiveM MDT &amp; CAD System
 
 ## ⚠️ Achtung dieses Script ist noch nicht zu 100% fertiggestellt und einige Features werden noch folgen.
 
-![MDT](./images/dashboard.png)
+![MDT](./img/dashboard.png)
 
 
 ## Installation
