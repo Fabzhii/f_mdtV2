@@ -126,7 +126,7 @@ RegisterNUICallback('load_dashboard', function(data, cb)
                         <h2 class="text-gray-100">%s</h2>
                         <h3 class="text-neutral-500">%s</h3>
                         <sl-divider class="w-full h-[1px] bg-neutral-500"></sl-divider>
-                        <div class="max-h-[31vh] overflow-y-auto">
+                        <div class="max-h-[24vh] overflow-y-auto">
                             %s
                         </div>
                     </div>
