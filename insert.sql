@@ -133,7 +133,7 @@ CREATE TABLE `f_mdt_documents` (
 ALTER TABLE `users` 
     ADD COLUMN `warrant` LONGTEXT NOT NULL DEFAULT '{"state":false,"infos":"n/A","reason":"n/A"}',
     ADD COLUMN `editinfo` LONGTEXT NOT NULL DEFAULT '{"telefon":"n/A","email":"n/A","job":"n/A"}',
-    ADD COLUMN `state` LONGTEXT NOT NULL DEFAULT '[]',
+    ADD COLUMN `state` LONGTEXT NOT NULL DEFAULT '{"status":"n/A","callname":"n/A","o1":"n/A","vehicle":"n/A","o3":"n/A","o2":"n/A","frequency":"n/A","position":"n/A"}',
     ADD COLUMN `images` LONGTEXT NOT NULL DEFAULT '[]',
     ADD COLUMN `callNumber` int(11) NOT NULL DEFAULT 999,
     ADD COLUMN `badgeNumber` varchar(10) NOT NULL DEFAULT 'n/A',
