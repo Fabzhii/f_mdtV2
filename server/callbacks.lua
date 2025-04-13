@@ -31,33 +31,35 @@ end)
 function getCopData(id)
     local p = promise.new()
     local xPlayer = ESX.GetPlayerFromId(id)
-    MySQL.Async.fetchAll('SELECT * FROM users WHERE identifier = @identifier', {
-        ['@identifier']  = xPlayer.identifier,
-    }, function(data)
-        local sqlData = data[1]
-        local data = {
-            name = xPlayer.getName(),
-            coords = xPlayer.getCoords(true),
-            canBeTracked = canBeTracked(id),
-            job_name = xPlayer.getJob().name,
-            job_label = xPlayer.getJob().label,
-            job_grade_name = xPlayer.getJob().grade_name,
-            job_grade_label = xPlayer.getJob().grade_label,
-            phone_number = sqlData[Config.PhoneNumberColomn],
-            status = (json.decode(sqlData.state)).status or "n/A",
-            callname = (json.decode(sqlData.state)).callname or "n/A",
-            callnumber = sqlData.callNumber,
-            badgenumber = sqlData.badgeNumber,
-            unit = sqlData.unit,
-            position = (json.decode(sqlData.state)).position or "n/A",
-            vehicle = (json.decode(sqlData.state)).vehicle or "n/A",
-            frequency = (json.decode(sqlData.state)).frequency or "n/A",
-            o1 = (json.decode(sqlData.state)).o1 or "n/A",
-            o2 = (json.decode(sqlData.state)).o2 or "n/A",
-            o3 = (json.decode(sqlData.state)).o3 or "n/A",
-        }
-        p:resolve(data)
-    end)
+    if xPlayer then 
+        MySQL.Async.fetchAll('SELECT * FROM users WHERE identifier = @identifier', {
+            ['@identifier']  = xPlayer.identifier,
+        }, function(data)
+            local sqlData = data[1]
+            local data = {
+                name = xPlayer.getName(),
+                coords = xPlayer.getCoords(true),
+                canBeTracked = canBeTracked(id),
+                job_name = xPlayer.getJob().name,
+                job_label = xPlayer.getJob().label,
+                job_grade_name = xPlayer.getJob().grade_name,
+                job_grade_label = xPlayer.getJob().grade_label,
+                phone_number = sqlData[Config.PhoneNumberColomn],
+                status = (json.decode(sqlData.state)).status or "n/A",
+                callname = (json.decode(sqlData.state)).callname or "n/A",
+                callnumber = sqlData.callNumber,
+                badgenumber = sqlData.badgeNumber,
+                unit = sqlData.unit,
+                position = (json.decode(sqlData.state)).position or "n/A",
+                vehicle = (json.decode(sqlData.state)).vehicle or "n/A",
+                frequency = (json.decode(sqlData.state)).frequency or "n/A",
+                o1 = (json.decode(sqlData.state)).o1 or "n/A",
+                o2 = (json.decode(sqlData.state)).o2 or "n/A",
+                o3 = (json.decode(sqlData.state)).o3 or "n/A",
+            }
+            p:resolve(data)
+        end)
+    end 
     return Citizen.Await(p)
 end
 
