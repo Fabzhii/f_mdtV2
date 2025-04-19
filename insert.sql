@@ -141,8 +141,7 @@ ALTER TABLE `users`
     ADD COLUMN `notes` LONGTEXT NOT NULL DEFAULT '[]',
     ADD COLUMN `files` LONGTEXT NOT NULL DEFAULT '[]',
     ADD COLUMN `info` LONGTEXT NOT NULL DEFAULT '',
-    ADD COLUMN `trainings` LONGTEXT NOT NULL DEFAULT '[]',
-    ADD COLUMN `permission` int(11) NOT NULL DEFAULT 0;
+    ADD COLUMN `trainings` LONGTEXT NOT NULL DEFAULT '[]';
 
 ALTER TABLE `owned_vehicles` 
     ADD COLUMN `registered` int(11) NOT NULL DEFAULT 0,
